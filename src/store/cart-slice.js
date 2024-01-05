@@ -22,6 +22,7 @@ reducers: {
            totalPrice: newItem.price,
            name: newItem.name
         })
+        state.totalQuantity++;
     }
     },
     removeFromcart(state, action){
