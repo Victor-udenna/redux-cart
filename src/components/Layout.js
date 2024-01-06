@@ -10,7 +10,7 @@ const Layout = () => {
   const itemList = useSelector((state)=> state.cart.itemList); 
 const showCart = useSelector((state)=> state.cart.showCart);
 
-itemList.forEach((item) => {
+itemList && itemList.forEach((item) => {
   total += item.totalPrice;
 });
   return (

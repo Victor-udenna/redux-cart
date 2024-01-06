@@ -8,9 +8,9 @@ const Cart = () => {
 
  const handleShowcart=()=>{
   dispatch(cartAction.setShowcart())
- }
+ };
 
-  const quantity = value.length;
+  const quantity = value && value.length;
   return (
     <div className="cartIcon">
       <h3 onClick={handleShowcart}>Cart: {quantity} Items</h3>

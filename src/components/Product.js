@@ -16,6 +16,8 @@ const Product = ({ name, id, imgURL, price }) => {
  )) 
  }
 
+ console.log(name, id, price)
+
   return (
     <div className="card">
       <img src={imgURL} alt={name} />

@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-const DUMMY_PRODUCTS = [
+export const DUMMY_PRODUCTS = [
   {
     id: 1,
     name: "MacBook",
