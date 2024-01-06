@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Notification from "./components/Notification";
 import { uiActions } from "./store/ui-slice";
+import { sendCartdata } from "./store/cart-slice";
 let isFirstRender = true;
 
 function App() {
@@ -19,31 +20,8 @@ useEffect(()=>{
     isFirstRender = false;
     return;
   }
-const sendRequest  = async()=>{
-  dispatch(uiActions.showNotification({
-    message: "Sending requst",
-    type: 'warning',
-    open: true
-  }))
- const res = await fetch("https://wallet-test-76537-default-rtdb.firebaseio.com/cartitems.json", {
-  method: "Put",
-  body: JSON.stringify(cart)
-})
- const data = await res.json();
- dispatch(uiActions.showNotification({
-  message: "Request sent",
-  type: 'success',
-  open: true
-}))
-}
-sendRequest().catch((err)=>{
-  dispatch(uiActions.showNotification({
-    message: "Request failed",
-    type: 'error',
-    open: true
-  }))
-console.log(err)  
-})
+
+dispatch(sendCartdata(cart))
 }, [cart])
 console.log(cart)
 
